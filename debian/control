@@ -3,11 +3,14 @@ Section: python
 Priority: optional
 Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
 Uploaders: Julien Danjou <acid@debian.org>,
-           Thomas Goirand <zigo@debian.org>,
-           Ghe Rivero <ghe.rivero@stackops.com>,
-           Mehdi Abaakouk <sileht@sileht.net>
-Build-Depends: debhelper (>= 9), python-setuptools,  python-all (>= 2.6.6-3~), openstack-pkg-tools
-Standards-Version: 3.9.3
+ Thomas Goirand <zigo@debian.org>,
+ Ghe Rivero <ghe.rivero@stackops.com>,
+ Mehdi Abaakouk <sileht@sileht.net>
+Build-Depends: debhelper (>= 9),
+ openstack-pkg-tools,
+ python-all (>= 2.6.6-3~),
+ python-setuptools
+Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-django-discover-runner.git;a=summary
 Vcs-Git: git://anonscm.debian.org/openstack/python-django-discover-runner.git
 Homepage: https://pypi.python.org/pypi/django-discover-runner
@@ -15,7 +18,7 @@ Homepage: https://pypi.python.org/pypi/django-discover-runner
 Package: python-django-discover-runner
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${python:Depends}, ${misc:Depends}, python-django, python-unittest2
+Depends: python-django, python-unittest2, ${misc:Depends}, ${python:Depends}
 Provides: ${python:Provides}
 Description: alternative Django test runner
  python-django-discover-runner is an alternative Django "TEST_RUNNER" which
