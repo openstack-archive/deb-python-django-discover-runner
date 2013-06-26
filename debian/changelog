@@ -1,0 +1,5 @@
+python-django-discover-runner (1.0-1) unstable; urgency=low
+
+  * Initial releas (Closes: #714134).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 26 Jun 2013 14:51:58 +0800
