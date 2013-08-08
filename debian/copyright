@@ -4,13 +4,13 @@ Source: git://github.com/jezdez/django-discover-runner.git
 
 Files: debian/*
 Copyright: (c) 2013, Thomas Goirand <zigo@debian.org>
-License: BSD-3-clauses
+License: BSD-3-clause
 
 Files: *
 Copyright: (c) 2011-2013, The django-discover-runner authors
-License: BSD-3-clauses
+License: BSD-3-clause
 
-License: BSD-3-clauses
+License: BSD-3-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  .
