@@ -6,7 +6,12 @@ Uploaders: Julien Danjou <acid@debian.org>,
            Thomas Goirand <zigo@debian.org>,
            Ghe Rivero <ghe.rivero@stackops.com>,
            Mehdi Abaakouk <sileht@sileht.net>
-Build-Depends: debhelper (>= 9), python-setuptools,  python-all (>= 2.6.6-3~), openstack-pkg-tools
+Build-Depends: debhelper (>= 9),
+               openstack-pkg-tools,
+               python-all (>= 2.6.6-3~),
+               python-setuptools,
+               python3-all,
+               python3-setuptools
 Standards-Version: 3.9.3
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-django-discover-runner.git;a=summary
 Vcs-Git: git://anonscm.debian.org/openstack/python-django-discover-runner.git
@@ -15,10 +20,25 @@ Homepage: https://pypi.python.org/pypi/django-discover-runner
 Package: python-django-discover-runner
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${python:Depends}, ${misc:Depends}, python-django, python-unittest2
+Depends: python-django, python-unittest2, ${misc:Depends}, ${python:Depends}
 Provides: ${python:Provides}
-Description: alternative Django test runner
+Description: alternative Django test runner - Python 2.x
  python-django-discover-runner is an alternative Django "TEST_RUNNER" which
  uses the unittest2 test discovery from a base path specified in the settings,
  or any other module or package specified to the "test" management command,
  including app tests.
+ .
+ This package provides the Python 2.x module.
+
+Package: python3-django-discover-runner
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: python3-django, ${misc:Depends}, ${python3:Depends}
+Provides: ${python3:Provides}
+Description: alternative Django test runner - Python 3.x
+ python-django-discover-runner is an alternative Django "TEST_RUNNER" which
+ uses the unittest2 test discovery from a base path specified in the settings,
+ or any other module or package specified to the "test" management command,
+ including app tests.
+ .
+ This package provides the Python 3.x module.

@@ -1,10 +1,20 @@
 #!/usr/bin/make -f
 
-#export DH_VERBOSE=1
+PYTHONS:=$(shell pyversions -vr)
+PYTHON3S:=$(shell py3versions -vr)
 
 UPSTREAM_GIT = git://github.com/jezdez/django-discover-runner.git
-
 include /usr/share/openstack-pkg-tools/pkgos.make
 
 %:
-	dh $@  --with python2
+	dh $@  --with python2,python3
+
+override_dh_auto_install:
+	set -e && for pyvers in $(PYTHONS); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python-django-discover-runner; \
+	done
+	set -e && for pyvers in $(PYTHON3S); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python3-django-discover-runner; \
+	done
